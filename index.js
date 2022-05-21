@@ -37,10 +37,10 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY });
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
      </head>
       <body>
-        <p>${title}</p>
-        <p>${tags}</p>
-        <p>${summary}</p>
-        <p><a href="${url}">文章内容</a></p>
+        <p>题目：${title}</p>
+        <p>标签：${tags}</p>
+        <p>总结：${summary}</p>
+        <p>链接：<a href="${url}">文章内容</a></p>
       </body>
     </html>
   `;

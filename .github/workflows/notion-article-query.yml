@@ -34,3 +34,10 @@ jobs:
           # Required mail server port:
           DATABASE_ID: ${{ secrets.ARTICLE_DATABASE_ID }}
           
+      - name: cache article content for sharing among jobs
+        uses: actions/cache@v3.0.2
+        with: 
+          # A list of files, directories, and wildcard patterns to cache and restore
+          path: index.html
+          # An explicit key for restoring and saving the cache
+          key: article

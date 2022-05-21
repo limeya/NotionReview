@@ -51,6 +51,6 @@ jobs:
           # Optional plain body:
 #           body: Build job of ${{github.repository}} completed successfully!
           # Optional HTML body read from file:
-          html_body: file://article-review.html
+          html_body: file://index.html
           # Optional converting Markdown to HTML (set content_type to text/html too):
 #           convert_markdown: true

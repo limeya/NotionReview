@@ -1,12 +1,10 @@
 const { Client } = require('@notionhq/client');
+
 // const core = require("@actions/core")
-
-const notion = new Client({ auth: process.env.NOTION_API_KEY });
-
 // const notion_api_key = core.getInput("notion_api_key", { required: true })
 // const database_id = core.getInput("database_id", { required: true })
 
-const notion = new Client({ auth: notion_api_key });
+const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
 (async () => {
   const databaseId = process.env.DATABASE_ID;

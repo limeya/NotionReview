@@ -63,9 +63,9 @@ jobs:
           # Optional whether this connection use TLS (default is true if server_port is 465)
           secure: true
           # Optional plain body:
-          body: ${{ needs.article-query.outputs.article-item }}
+#           body: ${{ needs.article-query.outputs.article-item }}
           # Optional HTML body read from file:
-#           html_body: file://index.html
+          html_body: ${{ needs.article-query.outputs.article-item }}
           # Optional converting Markdown to HTML (set content_type to text/html too):
 #           convert_markdown: true
     

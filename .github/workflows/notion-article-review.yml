@@ -16,6 +16,10 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  # query articles in notion database
+  article-query:
+    uses: ./.github/workflows/notion-article-query.yml
+
   # This workflow contains a single job called "article-review"
   article-review:
     # The type of runner that the job will run on
@@ -26,8 +30,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
     
-      - name: query articles in notion database
-        uses: ./.github/workflows/notion-article-query.yml
+#       - name: query articles in notion database
+#         uses: ./.github/workflows/notion-article-query.yml
       
       - name: send mail
         uses: dawidd6/action-send-mail@master

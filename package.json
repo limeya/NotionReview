@@ -8,6 +8,6 @@
   },
   "author": "limeya",
   "dependencies": {
-    "@notionhq/client": "1.0.4",
+    "@notionhq/client": "1.0.4"
   }
 }

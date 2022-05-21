@@ -22,4 +22,32 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY });
     },
   });
   console.log(response);
+  
+  const article = JSON.parse(response[0]);
+  
+  const title = article.properties.Name.title.plain_text;
+  const tags = article.properties.Tags.multi_select.map(item -> item.name).join('/');
+  const summary = article.properties.总结.rich_text.plain_text;
+  const url = article.url;
+  
+  let context = `
+    <html>
+     <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+     </head>
+      <body>
+        <p>${title}</p>
+        <p>${tags}</p>
+        <p>${wearMsg}</p>
+        <p><a href="${url}">文章内容</a></p>
+      </body>
+    </html>
+  `;
+
+  console.log(context);
+  
+// 	fs.writeFileSync("index.html", context, "utf8");
+  
+  
 })();
+

@@ -38,7 +38,7 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY });
       <body>
         <p>${title}</p>
         <p>${tags}</p>
-        <p>${wearMsg}</p>
+        <p>${summary}</p>
         <p><a href="${url}">文章内容</a></p>
       </body>
     </html>

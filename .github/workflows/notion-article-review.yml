@@ -19,6 +19,8 @@ jobs:
   # query articles in notion database
   article-query:
     uses: ./.github/workflows/notion-article-query.yml
+    secrets: inherit
+    
 
   # This workflow contains a single job called "article-review"
   article-review:

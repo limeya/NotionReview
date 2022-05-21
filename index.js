@@ -44,10 +44,8 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY });
     </html>
   `;
 
-  console.log(context);
-  
-// 	fs.writeFileSync("index.html", context, "utf8");
-  
-  
+//   console.log(context);
+	fs.writeFileSync("index.html", context, "utf8");
+ 
 })();
 

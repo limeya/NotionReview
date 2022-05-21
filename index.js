@@ -26,7 +26,7 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY });
   const article = JSON.parse(response[0]);
   
   const title = article.properties.Name.title.plain_text;
-  const tags = article.properties.Tags.multi_select.map(item -> item.name).join('/');
+  const tags = article.properties.Tags.multi_select.map(item => item.name).join('/');
   const summary = article.properties.总结.rich_text.plain_text;
   const url = article.url;
   

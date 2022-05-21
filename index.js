@@ -1,7 +1,7 @@
 const { Client } = require('@notionhq/client');
 const fs = require("fs");
+const core = require("@actions/core")
 
-// const core = require("@actions/core")
 // const notion_api_key = core.getInput("notion_api_key", { required: true })
 // const database_id = core.getInput("database_id", { required: true })
 
@@ -46,6 +46,8 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY });
   `;
 
 //   console.log(context);
+	
+	core.setOutput('article-item', context)
 	fs.writeFileSync("index.html", context, "utf8");
  
 })();

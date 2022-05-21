@@ -4,6 +4,8 @@ name: notion-article-query
 
 # Controls when the workflow will run
 on:
+  workflow_call:
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 

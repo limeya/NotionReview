@@ -60,3 +60,4 @@ jobs:
           html_body: file://index.html
           # Optional converting Markdown to HTML (set content_type to text/html too):
 #           convert_markdown: true
+    needs: article-query

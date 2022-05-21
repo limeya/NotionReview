@@ -28,7 +28,7 @@ jobs:
         run: npm install && npm run server
         env: 
           # Required mail server address:
-          NOTION_API_KEY: ${{ NOTION_API_KEY }}
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           # Required mail server port:
-          DATABASE_ID: ${{ ARTICLE_DATABASE_ID }}
+          DATABASE_ID: ${{ secrets.ARTICLE_DATABASE_ID }}
           

@@ -1,0 +1,13 @@
+{
+  "name": "notion-review",
+  "version": "1.0.0",
+  "description": "Review notion contents",
+  "main": "index.js",
+  "scripts": {
+    "server": "node index.js"
+  },
+  "author": "limeya",
+  "dependencies": {
+    "@notionhq/client": "1.0.4",
+  }
+}

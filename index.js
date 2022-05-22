@@ -10,19 +10,25 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY });
 (async () => {
   const databaseId = process.env.DATABASE_ID;
   const response = await notion.databases.query({
-    database_id: databaseId,
-    filter: {
-      and: [
-        {
-          property: '状态',
-          select: {
-            is_empty: true,
-          },
-        }
-      ],
-    },
+	database_id: databaseId,
+	filter: {
+		and: [
+			{
+			  property: '状态',
+			  select: {
+				equals: '已总结',
+			  },
+			}
+		],
+	},
+	sorts: [
+		{
+			property: '漫步函数',
+			direction: 'ascending',
+		},
+	],
   });
-  console.log(response);
+//   console.log(response);
   
   const article = response.results[0];
   
@@ -48,7 +54,7 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY });
 //   console.log(context);
 	
 	core.setOutput('article-item', context)
-	fs.writeFileSync("index.html", context, "utf8");
+// 	fs.writeFileSync("index.html", context, "utf8");
  
 })();
 

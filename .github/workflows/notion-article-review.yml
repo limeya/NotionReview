@@ -42,6 +42,10 @@ jobs:
           path: index.html
           # An explicit key for restoring and saving the cache
           key: article
+          
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       
       - name: send mail
         uses: dawidd6/action-send-mail@master
@@ -55,7 +59,7 @@ jobs:
           # Optional (recommended) mail server password:
           password: ${{secrets.MAIL_PASSWORD}}
           # Required mail subject:
-          subject: Notion文章阅读回顾
+          subject: Notion文章阅读回顾-${{ steps.date.outputs.date }}
           # Required recipients' addresses:
           to: ${{secrets.MAIL_TO}}
           # Required sender full name (address can be skipped):
